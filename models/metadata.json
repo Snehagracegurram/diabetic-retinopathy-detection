@@ -1,0 +1,42 @@
+{
+  "classification": {
+    "model_name": "dr_classifier",
+    "encoder": "efficientnet_b3",
+    "epochs": 100,
+    "best_metric": 0.6367140005091383,
+    "git_commit": "unavailable",
+    "date": "2026-02-22T05:04:35.036974+00:00",
+    "seed": 42,
+    "dataset_versions": {
+      "aptos": "local",
+      "idrid": "local",
+      "ddr": "local"
+    }
+  },
+  "segmentation": {
+    "model_name": "dr_segmenter",
+    "encoder": "efficientnet-b3",
+    "epochs": 60,
+    "best_metric": 0.41109126226133375,
+    "git_commit": "unavailable",
+    "date": "2026-02-22T10:02:24.957225+00:00",
+    "seed": 42,
+    "dataset_versions": {
+      "idrid": "local",
+      "ddr": "local"
+    }
+  },
+  "localization": {
+    "model_name": "dr_localizer",
+    "encoder": "resnet18",
+    "model_used": "direct_regression",
+    "epochs": 80,
+    "best_metric": 110.03933715820312,
+    "git_commit": "unavailable",
+    "date": "2026-02-22T21:53:05.253590+00:00",
+    "seed": 42,
+    "dataset_versions": {
+      "idrid": "local"
+    }
+  }
+}
