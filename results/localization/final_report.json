@@ -1,0 +1,34 @@
+{
+  "model_used": "direct_regression",
+  "epochs_trained": 80,
+  "mean_pixel_error": 110.03933715820312,
+  "median_pixel_error": 48.462120056152344,
+  "within10px": 0.03225806451612903,
+  "within20px": 0.13709677419354838,
+  "fixes_applied": [
+    "Applied keypoint-aware localization augmentations so coordinates transform with images.",
+    "Replaced localization head with a spatially-aware soft-argmax direct-regression decoder (OD/FV heatmaps -> coordinates).",
+    "Switched localization objective to SmoothL1 coordinate regression with geometric consistency and heatmap supervision.",
+    "Standardized validation/test metrics strictly in pixel space (mean/median/within10/within20).",
+    "Added automatic GPU batch-size probing (largest fitting forward/backward batch).",
+    "Enabled up to 3 automatic retraining attempts with adjusted hyperparameters.",
+    "Generated 20-sample visual verification overlays for predicted vs ground-truth keypoints."
+  ],
+  "status": "FAILED",
+  "attempts_ran": 3,
+  "selected_attempt": 1,
+  "val_metrics": {
+    "mean_pixel_error": 110.03933715820312,
+    "median_pixel_error": 48.462120056152344,
+    "within_10px": 0.03225806451612903,
+    "within_20px": 0.13709677419354838,
+    "loss": 0.07520385110570539
+  },
+  "test_metrics": {
+    "mean_pixel_error": 142.03660583496094,
+    "median_pixel_error": 81.15299987792969,
+    "within_10px": 0.016129032258064516,
+    "within_20px": 0.1532258064516129,
+    "loss": 0.08146603669851057
+  }
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "timestamp_utc": "2026-02-22T05:05:10.886044+00:00",
+    "stage": "training_start",
+    "status": "ok",
+    "details": {
+      "num_train": 786,
+      "num_val": 169,
+      "num_test": 169,
+      "batch_size": 8,
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "gpu_vram_gb": 8.0
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-22T06:34:35.309853+00:00",
+    "stage": "resume",
+    "status": "ok",
+    "details": {
+      "resume_path": "models\\segmentation\\epoch_030.pt",
+      "start_epoch": 31,
+      "best_metric": 0.41109126226133375
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-22T06:34:35.312374+00:00",
+    "stage": "training_start",
+    "status": "ok",
+    "details": {
+      "num_train": 786,
+      "num_val": 169,
+      "num_test": 169,
+      "batch_size": 8,
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "gpu_vram_gb": 8.0
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-22T06:47:31.584378+00:00",
+    "stage": "resume",
+    "status": "ok",
+    "details": {
+      "resume_path": "models\\segmentation\\epoch_031.pt",
+      "start_epoch": 32,
+      "best_metric": 0.41109126226133375
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-22T06:47:31.588879+00:00",
+    "stage": "training_start",
+    "status": "ok",
+    "details": {
+      "num_train": 786,
+      "num_val": 169,
+      "num_test": 169,
+      "batch_size": 8,
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "gpu_vram_gb": 8.0
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-22T07:03:37.552686+00:00",
+    "stage": "resume",
+    "status": "ok",
+    "details": {
+      "resume_path": "models\\segmentation\\epoch_033.pt",
+      "start_epoch": 34,
+      "best_metric": 0.41109126226133375
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-22T07:03:37.555700+00:00",
+    "stage": "training_start",
+    "status": "ok",
+    "details": {
+      "num_train": 786,
+      "num_val": 169,
+      "num_test": 169,
+      "batch_size": 8,
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "gpu_vram_gb": 8.0
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-22T10:01:01.116708+00:00",
+    "stage": "evaluation_only_finalize",
+    "status": "ok",
+    "details": {
+      "checkpoint": "models\\segmentation\\best.pt",
+      "final_val_metrics": {
+        "dice_microaneurysms": 0.5177712737116,
+        "iou_microaneurysms": 0.349319416449418,
+        "dice_hemorrhages": 0.39897698209913246,
+        "iou_hemorrhages": 0.2492012779583079,
+        "dice_hard_exudates": 0.35017947695658264,
+        "iou_hard_exudates": 0.21225307363439525,
+        "dice_soft_exudates": 0.10473914776772722,
+        "iou_soft_exudates": 0.05526371088347839,
+        "dice_optic_disc": 0.6837894307716262,
+        "iou_optic_disc": 0.5195137060591644,
+        "mean_dice": 0.41109126226133375,
+        "mean_iou": 0.2771102369969528,
+        "loss": 0.40034232548708043
+      },
+      "final_test_metrics": {
+        "dice_microaneurysms": 0.5192714721221178,
+        "iou_microaneurysms": 0.3506864778693374,
+        "dice_hemorrhages": 0.40956017536555517,
+        "iou_hemorrhages": 0.25751378268048636,
+        "dice_hard_exudates": 0.37982429302251053,
+        "iou_hard_exudates": 0.23443401316912466,
+        "dice_soft_exudates": 0.12283169246565351,
+        "iou_soft_exudates": 0.06543456545012596,
+        "dice_optic_disc": 0.6623458895781767,
+        "iou_optic_disc": 0.4951548269617839,
+        "mean_dice": 0.41876670451080267,
+        "mean_iou": 0.28064473322617167,
+        "loss": 0.4039580880184851
+      }
+    }
+  }
+]

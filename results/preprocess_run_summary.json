@@ -1,0 +1,243 @@
+[
+  {
+    "timestamp_utc": "2026-02-21T19:01:12.704707+00:00",
+    "stage": "dataset_discovery",
+    "status": "ok",
+    "details": {
+      "aptos": "C:\\Users\\raash\\Desktop\\Diabetic Retinopathy Detection\\aptos2019-blindness-detection",
+      "idrid": "C:\\Users\\raash\\Desktop\\Diabetic Retinopathy Detection\\dr-20260221T152116Z-3-001\\dr",
+      "ddr": "C:\\Users\\raash\\Desktop\\Diabetic Retinopathy Detection\\DDR_dataset\\DDR-dataset"
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-21T19:01:13.892582+00:00",
+    "stage": "classification_splits",
+    "status": "ok",
+    "details": {
+      "num_samples": 16700,
+      "splits": {
+        "train": "data\\processed\\splits\\classification_train.csv",
+        "val": "data\\processed\\splits\\classification_val.csv",
+        "test": "data\\processed\\splits\\classification_test.csv"
+      }
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-21T19:01:25.745503+00:00",
+    "stage": "segmentation_record_validation",
+    "status": "ok",
+    "details": {
+      "records_total": 1124,
+      "records_with_existing_images": 1124,
+      "missing_image_records": 0
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-21T19:01:42.560760+00:00",
+    "stage": "dataset_discovery",
+    "status": "ok",
+    "details": {
+      "aptos": "C:\\Users\\raash\\Desktop\\Diabetic Retinopathy Detection\\aptos2019-blindness-detection",
+      "idrid": "C:\\Users\\raash\\Desktop\\Diabetic Retinopathy Detection\\dr-20260221T152116Z-3-001\\dr",
+      "ddr": "C:\\Users\\raash\\Desktop\\Diabetic Retinopathy Detection\\DDR_dataset\\DDR-dataset"
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-21T19:01:43.730114+00:00",
+    "stage": "classification_splits",
+    "status": "ok",
+    "details": {
+      "num_samples": 16700,
+      "splits": {
+        "train": "data\\processed\\splits\\classification_train.csv",
+        "val": "data\\processed\\splits\\classification_val.csv",
+        "test": "data\\processed\\splits\\classification_test.csv"
+      }
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-21T19:01:55.354343+00:00",
+    "stage": "segmentation_record_validation",
+    "status": "ok",
+    "details": {
+      "records_total": 1124,
+      "records_with_existing_images": 1124,
+      "missing_image_records": 0
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-21T19:01:55.455816+00:00",
+    "stage": "segmentation_splits",
+    "status": "ok",
+    "details": {
+      "num_records": 1124,
+      "pairing": {
+        "total_records": 1124,
+        "skipped_missing_image": 0,
+        "missing_masks_by_class": {
+          "microaneurysms": 0,
+          "hemorrhages": 516,
+          "hard_exudates": 516,
+          "soft_exudates": 516,
+          "optic_disc": 608
+        }
+      },
+      "splits": {
+        "train": "data\\processed\\splits\\segmentation_train.json",
+        "val": "data\\processed\\splits\\segmentation_val.json"
+      }
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-21T19:02:06.998053+00:00",
+    "stage": "localization_splits",
+    "status": "ok",
+    "details": {
+      "num_records": 413,
+      "splits": {
+        "train": "data\\processed\\splits\\localization_train.csv",
+        "val": "data\\processed\\splits\\localization_val.csv"
+      }
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-21T19:06:29.726193+00:00",
+    "stage": "dataset_discovery",
+    "status": "ok",
+    "details": {
+      "aptos": "C:\\Users\\raash\\Desktop\\Diabetic Retinopathy Detection\\aptos2019-blindness-detection",
+      "idrid": "C:\\Users\\raash\\Desktop\\Diabetic Retinopathy Detection\\dr-20260221T152116Z-3-001\\dr",
+      "ddr": "C:\\Users\\raash\\Desktop\\Diabetic Retinopathy Detection\\DDR_dataset\\DDR-dataset"
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-21T19:06:30.917067+00:00",
+    "stage": "classification_splits",
+    "status": "ok",
+    "details": {
+      "num_samples": 16700,
+      "splits": {
+        "train": "data\\processed\\splits\\classification_train.csv",
+        "val": "data\\processed\\splits\\classification_val.csv",
+        "test": "data\\processed\\splits\\classification_test.csv"
+      }
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-21T19:06:42.849787+00:00",
+    "stage": "segmentation_record_validation",
+    "status": "ok",
+    "details": {
+      "records_total": 1124,
+      "records_with_existing_images": 1124,
+      "missing_image_records": 0
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-21T19:06:42.955250+00:00",
+    "stage": "segmentation_splits",
+    "status": "ok",
+    "details": {
+      "num_records": 1124,
+      "pairing": {
+        "total_records": 1124,
+        "skipped_missing_image": 0,
+        "missing_masks_by_class": {
+          "microaneurysms": 0,
+          "hemorrhages": 516,
+          "hard_exudates": 516,
+          "soft_exudates": 516,
+          "optic_disc": 608
+        }
+      },
+      "splits": {
+        "train": "data\\processed\\splits\\segmentation_train.json",
+        "val": "data\\processed\\splits\\segmentation_val.json",
+        "test": "data\\processed\\splits\\segmentation_test.json"
+      }
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-21T19:06:54.956703+00:00",
+    "stage": "localization_splits",
+    "status": "ok",
+    "details": {
+      "num_records": 413,
+      "splits": {
+        "train": "data\\processed\\splits\\localization_train.csv",
+        "val": "data\\processed\\splits\\localization_val.csv",
+        "test": "data\\processed\\splits\\localization_test.csv"
+      }
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-21T23:34:25.965449+00:00",
+    "stage": "dataset_discovery",
+    "status": "ok",
+    "details": {
+      "aptos": "C:\\Users\\raash\\Desktop\\Diabetic Retinopathy Detection\\data\\raw\\aptos2019",
+      "idrid": "C:\\Users\\raash\\Desktop\\Diabetic Retinopathy Detection\\data\\raw\\IDRiD",
+      "ddr": "C:\\Users\\raash\\Desktop\\Diabetic Retinopathy Detection\\data\\raw\\DDR"
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-21T23:34:27.530413+00:00",
+    "stage": "classification_splits",
+    "status": "ok",
+    "details": {
+      "num_samples": 16700,
+      "splits": {
+        "train": "data\\processed\\splits\\classification_train.csv",
+        "val": "data\\processed\\splits\\classification_val.csv",
+        "test": "data\\processed\\splits\\classification_test.csv"
+      }
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-21T23:34:39.681568+00:00",
+    "stage": "segmentation_record_validation",
+    "status": "ok",
+    "details": {
+      "records_total": 1124,
+      "records_with_existing_images": 1124,
+      "missing_image_records": 0
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-21T23:34:39.815348+00:00",
+    "stage": "segmentation_splits",
+    "status": "ok",
+    "details": {
+      "num_records": 1124,
+      "pairing": {
+        "total_records": 1124,
+        "skipped_missing_image": 0,
+        "missing_masks_by_class": {
+          "microaneurysms": 0,
+          "hemorrhages": 516,
+          "hard_exudates": 516,
+          "soft_exudates": 516,
+          "optic_disc": 608
+        }
+      },
+      "splits": {
+        "train": "data\\processed\\splits\\segmentation_train.json",
+        "val": "data\\processed\\splits\\segmentation_val.json",
+        "test": "data\\processed\\splits\\segmentation_test.json"
+      }
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-21T23:34:51.001287+00:00",
+    "stage": "localization_splits",
+    "status": "ok",
+    "details": {
+      "num_records": 413,
+      "splits": {
+        "train": "data\\processed\\splits\\localization_train.csv",
+        "val": "data\\processed\\splits\\localization_val.csv",
+        "test": "data\\processed\\splits\\localization_test.csv"
+      }
+    }
+  }
+]

@@ -1,0 +1,159 @@
+[
+  {
+    "timestamp_utc": "2026-02-22T20:40:02.946537+00:00",
+    "stage": "training_start",
+    "status": "ok",
+    "details": {
+      "attempt": 1,
+      "model_used": "direct_regression",
+      "num_train": 289,
+      "num_val": 62,
+      "num_test": 62,
+      "batch_size": 16,
+      "image_size": 512,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.01,
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "gpu_vram_gb": 8.0
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-22T21:03:59.438459+00:00",
+    "stage": "training_finish",
+    "status": "ok",
+    "details": {
+      "attempt": 1,
+      "best_epoch": 49,
+      "best_val_mean_pixel_error": 110.03933715820312,
+      "best_val_within_20px": 0.13709677419354838,
+      "final_val_metrics": {
+        "mean_pixel_error": 110.03933715820312,
+        "median_pixel_error": 48.462120056152344,
+        "within_10px": 0.03225806451612903,
+        "within_20px": 0.13709677419354838,
+        "loss": 0.07520385110570539
+      },
+      "final_test_metrics": {
+        "mean_pixel_error": 142.03660583496094,
+        "median_pixel_error": 81.15299987792969,
+        "within_10px": 0.016129032258064516,
+        "within_20px": 0.1532258064516129,
+        "loss": 0.08146603669851057
+      },
+      "best_checkpoint": "models\\localization\\attempt_1\\best.pt"
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-22T21:03:59.965491+00:00",
+    "stage": "training_start",
+    "status": "ok",
+    "details": {
+      "attempt": 2,
+      "model_used": "direct_regression",
+      "num_train": 289,
+      "num_val": 62,
+      "num_test": 62,
+      "batch_size": 16,
+      "image_size": 576,
+      "learning_rate": 5e-05,
+      "weight_decay": 0.005,
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "gpu_vram_gb": 8.0
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-22T21:28:54.933775+00:00",
+    "stage": "training_finish",
+    "status": "ok",
+    "details": {
+      "attempt": 2,
+      "best_epoch": 43,
+      "best_val_mean_pixel_error": 115.78376770019531,
+      "best_val_within_20px": 0.22580645161290322,
+      "final_val_metrics": {
+        "mean_pixel_error": 115.78376770019531,
+        "median_pixel_error": 56.46959686279297,
+        "within_10px": 0.07258064516129033,
+        "within_20px": 0.22580645161290322,
+        "loss": 0.12481878601735638
+      },
+      "final_test_metrics": {
+        "mean_pixel_error": 141.39991760253906,
+        "median_pixel_error": 100.133056640625,
+        "within_10px": 0.04032258064516129,
+        "within_20px": 0.18548387096774194,
+        "loss": 0.1299275472279518
+      },
+      "best_checkpoint": "models\\localization\\attempt_2\\best.pt"
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-22T21:28:55.380647+00:00",
+    "stage": "training_start",
+    "status": "ok",
+    "details": {
+      "attempt": 3,
+      "model_used": "direct_regression",
+      "num_train": 289,
+      "num_val": 62,
+      "num_test": 62,
+      "batch_size": 16,
+      "image_size": 512,
+      "learning_rate": 0.00015000000000000001,
+      "weight_decay": 0.001,
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "gpu_vram_gb": 8.0
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-22T21:52:57.911477+00:00",
+    "stage": "training_finish",
+    "status": "ok",
+    "details": {
+      "attempt": 3,
+      "best_epoch": 19,
+      "best_val_mean_pixel_error": 110.64140319824219,
+      "best_val_within_20px": 0.16129032258064516,
+      "final_val_metrics": {
+        "mean_pixel_error": 110.64140319824219,
+        "median_pixel_error": 57.91655731201172,
+        "within_10px": 0.024193548387096774,
+        "within_20px": 0.16129032258064516,
+        "loss": 0.09543628101387332
+      },
+      "final_test_metrics": {
+        "mean_pixel_error": 144.2923583984375,
+        "median_pixel_error": 79.75704956054688,
+        "within_10px": 0.008064516129032258,
+        "within_20px": 0.12903225806451613,
+        "loss": 0.10274020342096206
+      },
+      "best_checkpoint": "models\\localization\\attempt_3\\best.pt"
+    }
+  },
+  {
+    "timestamp_utc": "2026-02-22T21:53:05.255590+00:00",
+    "stage": "run_complete",
+    "status": "failed",
+    "details": {
+      "model_used": "direct_regression",
+      "attempts_ran": 3,
+      "selected_attempt": 1,
+      "final_val_metrics": {
+        "mean_pixel_error": 110.03933715820312,
+        "median_pixel_error": 48.462120056152344,
+        "within_10px": 0.03225806451612903,
+        "within_20px": 0.13709677419354838,
+        "loss": 0.07520385110570539
+      },
+      "final_test_metrics": {
+        "mean_pixel_error": 142.03660583496094,
+        "median_pixel_error": 81.15299987792969,
+        "within_10px": 0.016129032258064516,
+        "within_20px": 0.1532258064516129,
+        "loss": 0.08146603669851057
+      },
+      "status": "FAILED"
+    }
+  }
+]

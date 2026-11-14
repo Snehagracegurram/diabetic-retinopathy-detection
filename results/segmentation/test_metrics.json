@@ -1,0 +1,15 @@
+{
+  "dice_microaneurysms": 0.5192714721221178,
+  "iou_microaneurysms": 0.3506864778693374,
+  "dice_hemorrhages": 0.40956017536555517,
+  "iou_hemorrhages": 0.25751378268048636,
+  "dice_hard_exudates": 0.37982429302251053,
+  "iou_hard_exudates": 0.23443401316912466,
+  "dice_soft_exudates": 0.12283169246565351,
+  "iou_soft_exudates": 0.06543456545012596,
+  "dice_optic_disc": 0.6623458895781767,
+  "iou_optic_disc": 0.4951548269617839,
+  "mean_dice": 0.41876670451080267,
+  "mean_iou": 0.28064473322617167,
+  "loss": 0.4039580880184851
+}
