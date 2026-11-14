@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DR Insight Workbench</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body class="bg-slate-100 text-slate-900">
+  <div class="min-h-screen bg-[radial-gradient(circle_at_top_left,_#c5f6ff_0%,_transparent_40%),radial-gradient(circle_at_bottom_right,_#ffe8cc_0%,_transparent_35%)]">
+    <header class="max-w-7xl mx-auto px-6 pt-8 pb-4">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+        <div>
+          <h1 class="text-3xl md:text-4xl font-black tracking-tight">DR Insight Workbench</h1>
+          <p class="text-sm text-slate-600 mt-1">Diabetic retinopathy grading, lesion segmentation, localization, and explainability.</p>
+        </div>
+        <div class="text-xs text-amber-800 bg-amber-100 border border-amber-200 rounded-lg px-3 py-2 max-w-md">
+          Research/demo software only. Not approved for clinical diagnosis.
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 pb-8 grid lg:grid-cols-12 gap-6">
+      <section class="lg:col-span-4 bg-white rounded-2xl shadow-sm border border-slate-200 p-5">
+        <h2 class="text-lg font-semibold mb-4">Patient & Upload</h2>
+        <form id="infer-form" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <label class="field-label">Patient Name
+              <input class="field-input" type="text" name="patient_name" placeholder="Name" />
+            </label>
+            <label class="field-label">Patient ID
+              <input class="field-input" type="text" name="patient_id" placeholder="ID" />
+            </label>
+            <label class="field-label">Age
+              <input class="field-input" type="text" name="patient_age" placeholder="Age" />
+            </label>
+            <label class="field-label">Sex
+              <select class="field-input" name="patient_sex">
+                <option value="">Select</option>
+                <option>Female</option>
+                <option>Male</option>
+                <option>Other</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="field-label">Fundus Image
+            <input id="image-input" class="field-input" type="file" accept=".jpg,.jpeg,.png,.bmp,.tif,.tiff" required />
+          </label>
+
+          <button id="infer-btn" type="submit" class="w-full bg-slate-900 text-white py-2.5 rounded-lg font-semibold hover:bg-slate-800 transition">
+            Run Inference
+          </button>
+        </form>
+
+        <div class="mt-5">
+          <h3 class="text-sm font-semibold mb-2">Image Preview</h3>
+          <div class="relative aspect-square w-full rounded-xl border border-slate-200 overflow-hidden bg-slate-50">
+            <img id="preview-image" alt="preview" class="w-full h-full object-contain hidden" />
+            <div id="preview-placeholder" class="absolute inset-0 flex items-center justify-center text-sm text-slate-400">No image selected</div>
+          </div>
+        </div>
+
+        <div id="status-box" class="mt-4 text-sm text-slate-600"></div>
+        <div class="mt-4">
+          <button id="download-report" class="w-full hidden bg-emerald-600 text-white py-2 rounded-lg font-semibold hover:bg-emerald-500 transition">Download Report PDF</button>
+        </div>
+      </section>
+
+      <section class="lg:col-span-8 bg-white rounded-2xl shadow-sm border border-slate-200 p-5">
+        <div class="flex flex-wrap gap-2 border-b border-slate-200 pb-3 mb-4">
+          <button class="tab-btn active" data-tab="classification">Classification</button>
+          <button class="tab-btn" data-tab="segmentation">Segmentation</button>
+          <button class="tab-btn" data-tab="localization">Localization</button>
+          <button class="tab-btn" data-tab="explainability">Explainability</button>
+        </div>
+
+        <div id="tab-classification" class="tab-content space-y-4">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="text-sm text-slate-600">Predicted Grade</div>
+            <div id="grade-label" class="text-2xl font-black">-</div>
+            <div id="grade-confidence" class="text-sm text-slate-600">Confidence: -</div>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold mb-2">Class Probabilities</h3>
+            <div id="prob-bars" class="space-y-2"></div>
+          </div>
+        </div>
+
+        <div id="tab-segmentation" class="tab-content hidden space-y-4">
+          <div class="flex flex-wrap items-center gap-3">
+            <label class="text-sm font-medium">Overlay Alpha
+              <input id="alpha-slider" type="range" min="0" max="100" value="45" class="ml-2 align-middle" />
+            </label>
+            <button id="zoom-in" class="small-btn">Zoom +</button>
+            <button id="zoom-out" class="small-btn">Zoom -</button>
+            <button id="zoom-reset" class="small-btn">Reset View</button>
+          </div>
+          <div id="mask-toggles" class="grid grid-cols-2 md:grid-cols-3 gap-2"></div>
+          <div class="canvas-wrap">
+            <canvas id="seg-canvas"></canvas>
+          </div>
+        </div>
+
+        <div id="tab-localization" class="tab-content hidden space-y-4">
+          <div class="flex flex-wrap items-center gap-3">
+            <button id="loc-zoom-in" class="small-btn">Zoom +</button>
+            <button id="loc-zoom-out" class="small-btn">Zoom -</button>
+            <button id="loc-zoom-reset" class="small-btn">Reset View</button>
+          </div>
+          <div class="grid md:grid-cols-2 gap-3">
+            <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl">
+              <h3 class="font-semibold">Optic Disc Center</h3>
+              <p id="od-coord" class="text-sm text-slate-600 mt-2">x: -, y: -, uncertainty: - px</p>
+            </div>
+            <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl">
+              <h3 class="font-semibold">Fovea Center</h3>
+              <p id="fv-coord" class="text-sm text-slate-600 mt-2">x: -, y: -, uncertainty: - px</p>
+            </div>
+          </div>
+          <div class="canvas-wrap">
+            <canvas id="loc-canvas"></canvas>
+          </div>
+        </div>
+
+        <div id="tab-explainability" class="tab-content hidden space-y-3">
+          <h3 class="font-semibold">Grad-CAM</h3>
+          <div class="aspect-video rounded-xl border border-slate-200 overflow-hidden bg-slate-50">
+            <img id="gradcam-image" class="w-full h-full object-contain" alt="Grad-CAM" />
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/assets/app.js"></script>
+</body>
+</html>
